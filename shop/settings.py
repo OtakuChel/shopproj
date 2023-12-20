@@ -45,13 +45,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'orders.context_processors.getting_basket_info',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'shop.wsgi.application'
-
 
 DATABASES = {
     'default': {
@@ -83,7 +84,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
