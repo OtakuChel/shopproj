@@ -18,12 +18,11 @@
                                     <label>Имя</label>
                                     <span class="form-error">{{ form.name.errors }}</span>
                                     <input type="text" name="{{ form.name.html_name }}" class="form-control"
-                                        value="{{ request.POST.name }}"
-                                    >
+                                        value="{{ request.POST.name }}">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group"> 
                                 <div class="col-lg-4">
                                      <label>Телефон</label>
                                      <span class="form-error">{{ form.phone.errors }}</span>

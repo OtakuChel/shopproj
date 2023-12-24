@@ -11,18 +11,17 @@
                 <span>{{ product_image.product.discount }}%</span>
             </div>
         {% endif %}
-
+        <div class="product-price">
+            {{ product_image.product.price }} RUB.
+        </div>
         <h4>{{ product_image.product.name }}</h4>
         <p>
             {{ product_image.product.short_description }}
         </p>
-        <div>
-            {{ product_image.product.price }} RUB.
-        </div>
-        <div class="add-to-card-btn">
+        <!-- <div class="add-to-card-btn">
             <button class="btn btn-success">
                 Добавить в корзину
             </button>
-        </div>
+        </div> -->
     </div>
 </div>

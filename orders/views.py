@@ -56,7 +56,7 @@ def checkout(request):
         if form.is_valid():
             print("yes")
             data = request.POST
-            name = data.get("name", "3423453")
+            name = data["name"]
             phone = data["phone"]
             user, created = User.objects.get_or_create(username=phone, defaults={"first_name": name})
 
@@ -72,9 +72,9 @@ def checkout(request):
                     product_in_basket.order = order
                     product_in_basket.save(force_update=True)
 
-                    ProductInOrder.objects.create(product=product_in_basket.product, nmb = product_in_basket.nmb,
+                    ProductInOrder.objects.create(product=product_in_basket.product, nmb=product_in_basket.nmb,
                                                   price_per_item=product_in_basket.price_per_item,
-                                                  total_price = product_in_basket.total_price,
+                                                  total_price=product_in_basket.total_price,
                                                   order=order)
 
             return HttpResponseRedirect(request.META['HTTP_REFERER'])

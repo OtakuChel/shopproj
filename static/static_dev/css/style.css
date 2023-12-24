@@ -27,7 +27,7 @@ html, body{
 }
 
 .section-top{
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
 .product-description-tabs{
@@ -61,7 +61,7 @@ html, body{
 
 .discount-container{
     position: absolute;
-    top: 30%;
+    top: 10%;
     background: #55e073;
     width: 30%;
     color: white;
@@ -112,4 +112,12 @@ html, body{
 
 .form-error{
     color: red;
+}
+
+.product-price{
+    font-weight: 700;
+    color: #f93c00;
+    margin: 10px;
+    position: relative;
+    left: -90px;
 }

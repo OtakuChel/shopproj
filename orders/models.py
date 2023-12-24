@@ -103,7 +103,7 @@ class ProductInBasket(models.Model):
 
 
     def save(self, *args, **kwargs):
-        price_per_item = self.product.price
+        price_per_item = self.product.price_per_item
         self.price_per_item = price_per_item
         self.total_price = int(self.nmb) * price_per_item
 
