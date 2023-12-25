@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block content %}
-    <div class="section-top">
-        <img src="{% static 'static_dev/img/slider0.jpg' %}" class="image-responsive">
-    </div>
+    <!--<div class="section-top">
+        <img src="{% static 'static_dev/img/kjuj.png' %}" class="image-responsive">
+    </div>-->
     <div class="section section1">
         <div class="container">
             <div class="row">
@@ -19,20 +19,16 @@
             </div>
         </div>
     </div>
-    <div class="section section-delivery">
-        <div>
-            <h3>Free shipping</h3>
-        </div>
-    </div>
+
     <div class="section section2 phones-container">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="text-center">
-                        Телефоны
+                        Пижамы
                     </h1>
                 </div>
-                {% for product_image in products_images_phones %}
+                {% for product_image in products_images_pajamas %}
                     {% include 'landing/product_item.html' %}
                 {% endfor %}
 

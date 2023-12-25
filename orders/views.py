@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 def basket_adding(request):
     return_dict = dict()
     session_key = request.session.session_key
+    print('запрос:')
     print(request.POST)
     data = request.POST
     product_id = data.get("product_id")
@@ -20,7 +21,7 @@ def basket_adding(request):
         new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key, product_id=product_id,
                                                                      is_active=True, defaults={"nmb": nmb})
         if not created:
-            print ("not created")
+            print("not created")
             new_product.nmb += int(nmb)
             new_product.save(force_update=True)
 
@@ -45,9 +46,9 @@ def basket_adding(request):
 def checkout(request):
     session_key = request.session.session_key
     products_in_basket = ProductInBasket.objects.filter(session_key=session_key, is_active=True, order__isnull=True)
-    print(products_in_basket)
+    total_price = 0
     for item in products_in_basket:
-        print(item.order)
+        total_price += int(item.total_price)
 
 
     form = CheckoutContactForm(request.POST or None)
@@ -65,12 +66,13 @@ def checkout(request):
             for name, value in data.items():
                 if name.startswith("product_in_basket_"):
                     product_in_basket_id = name.split("product_in_basket_")[1]
+
                     product_in_basket = ProductInBasket.objects.get(id=product_in_basket_id)
-                    print(type(value))
 
                     product_in_basket.nmb = value
                     product_in_basket.order = order
                     product_in_basket.save(force_update=True)
+
 
                     ProductInOrder.objects.create(product=product_in_basket.product, nmb=product_in_basket.nmb,
                                                   price_per_item=product_in_basket.price_per_item,

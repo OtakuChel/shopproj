@@ -7,6 +7,8 @@ html, body{
 
 .navbar{
     margin-bottom: 0;
+    text-decoration: none;
+
 }
 
 .wrapper{
@@ -43,11 +45,11 @@ html, body{
 }
 
 .product-item{
-    height: 360px;
+    height: 350px;
     background-color: white;
     border: 1px solid lightgrey;
     position: relative;
-    padding: 10px 0 10px 0;
+    padding: 0px 0 10px 0;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -87,6 +89,7 @@ html, body{
     background-color: green;
     border: none;
     border-radius: 0;
+
 }
 
 .navbar-main{
@@ -119,5 +122,13 @@ html, body{
     color: #f93c00;
     margin: 10px;
     position: relative;
-    left: -90px;
+    left: -70px;
+    font-size: 130%;
+    font-weight: bold;
+    font-family: 'Arial', 'Verdana', sans-serif;
+}
+
+.nav-a {
+    text-decoration: none !important;
+    color: white;
 }

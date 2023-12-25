@@ -8,8 +8,8 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('', include('landing.urls')),
-    path('/product/', include('products.urls')),
-    path('/orders/', include('orders.urls')),
+    path('product/', include('products.urls')),
+    path('orders/', include('orders.urls')),
 ] \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

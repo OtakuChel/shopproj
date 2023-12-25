@@ -30,8 +30,8 @@ $(document).ready(function(){
                      console.log(data.products);
                      $('.basket-items ul').html("");
                      $.each(data.products, function(k, v){
-                        $('.basket-items ul').append('<li>'+ v.name+', ' + v.nmb + 'шт. ' + 'по ' + v.price_per_item + 'грн  ' +
-                            '<a class="delete-item" href="" data-product_id="'+v.id+'">x</a>'+
+                        $('.basket-items ul').append('<li>'+ v.name+', ' + v.nmb + 'шт. ' + ': ' + v.price_per_item + ' РУБ. ' +
+                            '<a class="delete-item" href="" data-product_id="'+v.id+'">X</a>'+
                             '</li>');
                      });
                  }
@@ -73,9 +73,9 @@ $(document).ready(function(){
          showingBasket();
      });
 
-     //$('.basket-container').mouseout(function(){
-     //    showingBasket();
-     //});
+     $('.basket-container').mouseout(function(){
+         showingBasket();
+     });
 
      $(document).on('click', '.delete-item', function(e){
          e.preventDefault();
